@@ -1,0 +1,46 @@
+
+MaxASA = {
+"Ala":129.0, 
+"Arg":274.0, 
+"Asn":195.0, 
+"Asp":193.0, 
+"Cys":167.0, 
+"Glu":223.0, 
+"Gln":225.0, 
+"Gly":104.0, 
+"His":224.0, 
+"Ile":197.0, 
+"Leu":201.0, 
+"Lys":236.0, 
+"Met":224.0, 
+"Phe":240.0, 
+"Pro":159.0, 
+"Ser":155.0, 
+"Thr":172.0, 
+"Trp": 285.0, 
+"Tyr":263.0, 
+"Val":174.0
+}
+
+one_letter_symbol = {
+"Ala": "A",
+"Arg": "R",
+"Asn": "N",
+"Asp": "D",
+"Cys": "C",
+"Glu": "E",
+"Gln": "Q",
+"Gly": "G",
+"His": "H",
+"Ile": "I",
+"Leu": "L",
+"Lys": "K",
+"Met": "M",
+"Phe": "F",
+"Pro": "P",
+"Ser": "S",
+"Thr": "T",
+"Trp": "W",
+"Tyr": "Y",
+"Val": "V"
+}

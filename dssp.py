@@ -5,25 +5,34 @@ import os
 from tqdm import tqdm
 from os import walk
 
-#extracting relative ASA with DSSP
-p = PDBParser()
-#pdb_dir = "/path/to/pdb files directory"
-#out_dir = "/Path/t/output directory"
+"""extracting relative accessible surface area(ASA) of each residue using Bio.PDB.DSSP module"""
 
+
+#pdb_dir = "/path/to/pdb files directory which their ASA will be extracted" 
+#out_dir = "/Path/to/output directory to save the result"
+
+
+
+#only keeping files with pdb exatension for further works.
 for (dirpath, dirnames, filenames) in walk(pdb_dir):
     break 
 for word in filenames[:]:
   if not word.endswith("pdb"):
     filenames.remove(word)
 
-for file in tqdm(filenames):
-  # DSSP data is accessed by a tuple (chain_id, res_id)
+
+
+p = PDBParser() #instantiating a Parser for PDB files!
+
+#generate and save the secondary structure and accessibility values for each pdb file with DSSP program!
+for file in tqdm(filenames): 
   """
-outputs provided by dssp are:
-(dssp index, amino acid, secondary structure, relative ASA, phi, psi,
-NH_O_1_relidx, NH_O_1_energy, O_NH_1_relidx, O_NH_1_energy,
-NH_O_2_relidx, NH_O_2_energy, O_NH_2_relidx, O_NH_2_energy)
+  outputs provided by dssp are:
+  (dssp index, amino acid, secondary structure, relative ASA, phi, psi,
+  NH_O_1_relidx, NH_O_1_energy, O_NH_1_relidx, O_NH_1_energy,
+  NH_O_2_relidx, NH_O_2_energy, O_NH_2_relidx, O_NH_2_energy)
   """
+  
   try:
     id = os.path.splitext(file)[0]
     structure = p.get_structure(f"{id}", f"{file}")
